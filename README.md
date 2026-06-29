@@ -1,36 +1,70 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🎩 Budget Butler
 
-## Getting Started
+> **Your Digital Family Office.**
+> A premium, AI-assisted subscription management dashboard designed explicitly for high-net-worth individuals.
 
-First, run the development server:
+![Budget Butler Preview](https://github.com/Prasen2/budget-butler/assets/budget-butler-preview.png)
 
+## 📌 Project Overview
+Managing household subscriptions and recurring expenses often becomes a chaotic, unmonitored leak of capital. **Budget Butler** is a luxury, fully-responsive dashboard built to elegantly manage digital portfolios. 
+
+Acting as a digital "Jeeves," the platform tracks monthly burn rates against a dynamic household budget, analyzes historical pricing data to detect stealthy cost increases, and scores utilization to recommend calculated subscription cancellations. Backed by a high-performance database and modern web architecture, Budget Butler transforms a disorganized spreadsheet into a pristine, aristocratic ledger.
+
+---
+
+## 🌟 Key Features
+
+- **The Pristine Ledger:** Full CRUD capabilities to seamlessly manage household subscriptions with real-time UI synchronization.
+- **Jeeves' Analysis Engine:** An intelligent recommendation system that analyzes utilization scores and historical price hikes to suggest optimized, mathematically-sound cancellations.
+- **Dynamic Budget Gauge:** Real-time visualization of the monthly burn rate plotted against a customizable household budget limit.
+- **Expenditure Insights:** Beautiful, Recharts-powered data visualizations breaking down spending by category and automatically highlighting vendor price inflation.
+
+---
+
+## 🛠️ Technology Stack
+
+- **Frontend Framework:** [Next.js 14+](https://nextjs.org/) (App Router)
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS
+- **UI Components:** [shadcn/ui](https://ui.shadcn.com/) & [Framer Motion](https://www.framer.com/motion/)
+- **Database:** Amazon Aurora PostgreSQL (via [Prisma ORM](https://www.prisma.io/))
+- **Deployment:** Vercel
+
+---
+
+## 🚀 Getting Started Locally
+
+### 1. Clone the repository
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/Prasen2/budget-butler.git
+cd budget-butler
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Install dependencies
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 3. Configure your Environment Variables
+Create a `.env` file in the root of the project and add your PostgreSQL connection string:
+```env
+DATABASE_URL="postgresql://username:password@localhost:5432/budget_butler?schema=public"
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 4. Initialize the Database & Seed Data
+Push the Prisma schema to your database and execute the seed script to populate your dashboard with demonstration data.
+```bash
+npx prisma db push --accept-data-loss
+npx tsx prisma/seed.ts
+```
 
-## Learn More
+### 5. Run the Development Server
+```bash
+npm run dev
+```
+Open [http://localhost:3000](http://localhost:3000) with your browser to view the application.
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📜 License
+This project was developed for the H0 Hackathon. All rights reserved.
