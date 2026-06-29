@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+@plugin "tailwindcss-animate";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --color-background: #0B0F1A;
+  --color-foreground: #F0E6D3;
+
+  --color-card: #141B2D;
+  --color-card-foreground: #F0E6D3;
+
+  --color-popover: #141B2D;
+  --color-popover-foreground: #F0E6D3;
+
+  --color-primary: #C9A84C;
+  --color-primary-foreground: #0B0F1A;
+
+  --color-secondary: #1A2235;
+  --color-secondary-foreground: #F0E6D3;
+
+  --color-muted: #1A2235;
+  --color-muted-foreground: #8B95A5;
+
+  --color-accent: #1A2235;
+  --color-accent-foreground: #F0E6D3;
+
+  --color-destructive: #C0392B;
+  --color-destructive-foreground: #F0E6D3;
+
+  --color-border: rgba(201, 168, 76, 0.08);
+  --color-input: rgba(201, 168, 76, 0.08);
+  --color-ring: #C9A84C;
+
+  --radius-lg: 16px;
+  --radius-md: calc(16px - 2px);
+  --radius-sm: calc(16px - 4px);
+
+  --font-display: "Playfair Display", "Cormorant Garamond", serif;
+  --font-mono: "JetBrains Mono", "SF Mono", monospace;
+  --font-sans: "Inter", sans-serif;
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
+
+@layer utilities {
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
